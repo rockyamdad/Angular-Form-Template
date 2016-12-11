@@ -1,0 +1,35 @@
+<h2>Create New Contact</h2>
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>First Name:</label>
+    <input type="text"
+           name="firstName" required
+           [(ngModel)]="contact.firstName"
+    >
+
+  </div>
+  <div>
+    <label>Last Name:</label>
+    <input type="text" id="lastName"
+           name="lastName" required
+           [(ngModel)]="contact.lastName"
+    >
+  </div>
+  <div>
+    <label>Email:</label>
+    <input type="text" id="email"
+           name="email" required
+           [(ngModel)]="contact.email"
+    >
+  </div>
+  <div>
+    <label>Phone:</label>
+    <input type="text" id="phone"
+           name="phone" required
+           [(ngModel)]="contact.phone"
+    >
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+<app-contact-list></app-contact-list>
+
