@@ -1,9 +1,9 @@
 <h2>Create New Contact</h2>
-<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
   <div>
     <label>First Name:</label>
     <input type="text"
-           name="firstName" required
+           name="firstName" required ngModel
            [(ngModel)]="contact.firstName"
     >
 
@@ -11,25 +11,28 @@
   <div>
     <label>Last Name:</label>
     <input type="text" id="lastName"
-           name="lastName" required
+           name="lastName" required ngModel
            [(ngModel)]="contact.lastName"
     >
   </div>
   <div>
     <label>Email:</label>
     <input type="text" id="email"
-           name="email" required
+           name="email" required ngModel
            [(ngModel)]="contact.email"
     >
   </div>
   <div>
     <label>Phone:</label>
     <input type="text" id="phone"
-           name="phone" required
+           name="phone" required ngModel
            [(ngModel)]="contact.phone"
     >
   </div>
   <button class="btn btn-primary" type="submit">Submit</button>
 </form>
-<app-contact-list></app-contact-list>
 
+<ul>
+  <li> Name</li>
+    <li *ngFor="let contact of contacts">{{contact.firstName}}</li>
+</ul>

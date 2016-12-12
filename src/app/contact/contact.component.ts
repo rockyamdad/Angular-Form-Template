@@ -13,19 +13,16 @@ export class ContactComponent implements OnInit {
   contact: Contact;
   contacts: Array<Contact>;
 
+
   ngOnInit():any {
     //console.log(this.contact);
-    this.contact = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: ''
-    };
+    this.contact = new Contact('fname','lname','','');
 
     this.loadContacts();
   }
-  onSubmit(){
-    this.contactService.insertContact(this.contact);
+  onSubmit(form){
+    console.log(form);
+    this.contactService.insertContact(new Contact(form.value.firstName,form.value.lastName,form.value.email,form.value.phone));
     this.loadContacts();
   }
 
