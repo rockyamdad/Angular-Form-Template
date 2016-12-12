@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit():any {
     //console.log(this.contact);
-    this.contact = new Contact('fname','lname','','');
+    this.contact = new Contact('','','','');
 
     this.loadContacts();
   }
